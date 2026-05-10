@@ -1,0 +1,15 @@
+
+@mixin component-grid {
+
+.grid-container{
+    max-width: 90rem;
+  }
+
+.pres-bottom{
+  margin-bottom: 2rem;
+  @include breakpoint(medium) {
+    margin-bottom: 6rem;
+    }
+  }
+
+}

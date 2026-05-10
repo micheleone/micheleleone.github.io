@@ -1,0 +1,177 @@
+$btn-style_1: (background-color: $white, color: $red, border: 1px solid $white);
+$btn-style_2: (background-color: $white, color: $blue, border: 1px solid $white);
+$btn-style_3: (background-color: $white, color: $green, border: 1px solid $white);
+$btn-style_4: (background-color: $green, color: $white, border: 1px solid $green);
+$btn-style_5: (background-color: $white, color: $orange, border: 1px solid $white);
+
+@mixin component-button {
+
+.button{
+
+  &.hollow{
+    display: flex;
+    align-items: center;
+    max-height: 2.5rem;
+    max-width: fit-content;
+    margin: 1.5rem 0 0 0;
+    color: $gray-900;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 0.063rem solid $gray-900;
+    border-radius: 0.25rem;
+    text-decoration: none;
+
+      i{
+        font-size: 1.5rem;
+        padding-left: 0.5rem;
+      }
+      &:hover{
+        color: $white;
+        background-color: $gray-900;
+      }
+      &:focus{
+        color: $white;
+        background-color: $gray-700;
+      }
+    @include breakpoint(small only) {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    }
+
+    &.little{
+      width: auto;
+      float: left;
+      position: relative;
+      left: 6.6%;
+      bottom: 3rem;
+      padding: 0.313rem 0.5rem;
+      margin: 0 0.5rem 0 0;
+      background-color: $body-bg;
+
+      a{
+      display: contents;
+      text-decoration: none;
+      font-size: 0.875rem;
+      color: $gray-900;
+      text-align: left;
+      font-weight: 700;
+
+        &:hover{
+          color: $white;
+        }
+      }
+
+      i{
+        padding: 0 0.5rem 0 0;
+        font-size: 1.25rem;
+
+        &.only-logo{
+          padding: 0; 
+        }
+      }
+
+      &:hover{
+        background-color: $gray-900;
+      }
+      &:focus{
+        background-color: $gray-700;
+      }
+   } 
+  }
+}
+
+ .menu-button{
+    top: 0;
+    right: 0;
+    margin-top: 1.438rem;
+    margin-bottom: 1.438rem;
+    margin-right: 6.667%;
+    color: $gray-900;
+    font-size: 1.5rem;
+    font-weight: 300;
+    position: absolute;
+   &:hover{
+     color: rgba($gray-900, 0.6);
+     @include transition;
+   }
+
+   &.close{
+    color: $white;
+   }
+ }
+
+.arrow-home{
+  position: absolute;
+  top: 44rem;
+  left: 50%;
+  text-align: justify !important;
+  font-size: 3rem !important;
+  width: 3rem;
+  height: 3rem;
+  stroke-width: 0.094rem;
+  animation: .8s ease-out 0s 1 fadeIn;
+  @include breakpoint(small only) {
+   display: none !important; 
+  }
+  @include breakpoint(large) {
+   top: 39rem;
+  }
+  @include breakpoint(xlarge) {
+   top: 36rem;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) { 
+  _::-webkit-full-page-media, _:future, :root , .arrow-home { 
+    animation: none; 
+  } 
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) { 
+  _::-webkit-full-page-media, _:future, :root , .stop-arrow-home { 
+    animation: none; 
+  } 
+}
+
+/* @include breakpoint(small only) {
+@keyframes animate-arrow-home {
+  50% {
+    top: 48.4rem;
+    }
+  }
+} */
+
+@include breakpoint(medium) {
+  @keyframes animate-arrow-home {
+    50% {
+      top: 36.8rem;
+      }
+    }
+  @-webkit-keyframes animate-arrow-home {
+    50% {
+      top: 36.4rem;
+    }
+  }   
+}
+
+.arrow-anchor{
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  color: $gray-900;
+  text-decoration: none;
+  &:hover{
+       color: $gray-700;
+       -moz-transition: all 0.1s ease-in-out;
+       -webkit-transition: all 0.1s ease-in-out;
+       -o-transition: all 0.1s ease-in-out;
+       transition: all 0.1s ease-in-out;
+     }
+  &:focus{
+       color: $gray-900;
+     }   
+   }
+
+}

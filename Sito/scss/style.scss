@@ -1,0 +1,29 @@
+@charset 'utf-8';
+
+// settings
+@import 'settings';
+
+//mixin
+@import 'mixin/mixin';
+
+// Utils
+@import 'components/utils/utils';
+
+// components import
+@import 'components/about';
+@import 'components/animation';
+@import 'components/button';
+@import 'components/grid';
+@import 'components/home';
+@import 'components/menu';
+@import 'components/works';
+
+// components
+@include component-about;
+@include component-animation;
+@include component-button;
+@include component-grid;
+@include component-home;
+@include component-menu;
+@include component-utils;
+@include component-works;

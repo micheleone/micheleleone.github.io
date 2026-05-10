@@ -1,0 +1,115 @@
+$prototype-spacers-count: 4 !default;
+$global-padding: 1rem;
+$global-margin: 1rem;
+
+@mixin margin(
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  @if $top != null {
+    margin-top: $top * $global-margin !important;
+  }
+  @if $right != null {
+    margin-right: $right * $global-margin !important;
+  }
+  @if $bottom != null {
+    margin-bottom: $bottom * $global-margin !important;
+  }
+  @if $left != null {
+    margin-left: $left * $global-margin !important;
+  }
+}
+
+@mixin padding(
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  @if $top != null {
+    padding-top: $top * $global-padding !important;
+  }
+  @if $right != null {
+    padding-right: $right * $global-padding !important;
+  }
+  @if $bottom != null {
+    padding-bottom: $bottom * $global-padding !important;
+  }
+  @if $left != null {
+    padding-left: $left * $global-padding !important;
+  }
+}
+
+@mixin component-utils-spacing {
+
+    .margin-horizontal-auto{
+      margin: 0 auto;
+    }
+
+  @for $spacer from 0 through $prototype-spacers-count {
+    // All Sides
+    .margin-#{$spacer} {
+      @include margin($spacer, $spacer, $spacer, $spacer);
+    }
+
+    .padding-#{$spacer} {
+      @include padding($spacer, $spacer, $spacer, $spacer);
+    }
+
+    // Top Side
+    .margin-top-#{$spacer} {
+      @include margin($spacer, null, null, null);
+    }
+
+    .padding-top-#{$spacer} {
+      @include padding($spacer, null, null, null);
+    }
+
+    // Right Side
+    .margin-right-#{$spacer} {
+      @include margin(null, $spacer, null, null);
+    }
+
+    .padding-right-#{$spacer} {
+      @include padding(null, $spacer, null, null);
+    }
+
+    // Bottom Side
+    .margin-bottom-#{$spacer} {
+      @include margin(null, null, $spacer, null);
+    }
+
+    .padding-bottom-#{$spacer} {
+      @include padding(null, null, $spacer, null);
+    }
+
+    // Left Side
+    .margin-left-#{$spacer} {
+      @include margin(null, null, null, $spacer);
+    }
+
+    .padding-left-#{$spacer} {
+      @include padding(null, null, null, $spacer);
+    }
+
+    // Horizontal Axes
+    .margin-horizontal-#{$spacer} {
+      @include margin(null, $spacer, null, $spacer);
+    }
+
+    .padding-horizontal-#{$spacer} {
+      @include padding(null, $spacer, null, $spacer);
+    }
+
+    // Vertical Axes
+    .margin-vertical-#{$spacer} {
+      @include margin($spacer, null, $spacer, null)
+    }
+
+    .padding-vertical-#{$spacer} {
+      @include padding($spacer, null, $spacer, null)
+    }
+  }
+}

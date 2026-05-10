@@ -1,0 +1,34 @@
+// button
+@mixin btn($border, $color, $background-color) {
+    background: none;
+    color: $background-color;
+    border: $border;
+  &:hover, &:focus, &:active {
+    color: $color;
+    background: $background-color;
+    font-weight: 400;
+  }
+}
+
+//hamburger
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//thumbnail-transition
+@mixin transition($what: all, $time: 0.3s, $how: ease) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}
+
+//internet explorer target
+ @mixin targetIE10() {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+} 

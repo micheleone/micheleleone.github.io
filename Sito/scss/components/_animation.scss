@@ -1,0 +1,70 @@
+
+@mixin component-animation {
+
+  @keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50%{
+    opacity: .3;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    }
+  }
+  @keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  50%{
+    opacity: .3;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    }
+  }
+  @keyframes slideInFromDown {
+    0% {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+    50%{
+      opacity: .3;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      50%{
+        opacity: .5;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+  .onAppearOpacity {
+    // transform: translate3d(-100px 0px, 0px);
+    opacity: 0;
+  }
+
+  .visible {
+    // transform: translate3d(0px 0px, 0px);
+    -webkit-transition: opacity 1.2s ease-in-out;
+    -moz-transition: opacity 1.2s ease-in-out;
+    -ms-transition: opacity 1.2s ease-in-out;
+    -o-transition: opacity 1.2s ease-in-out;
+    transition: opacity 1.2s ease-in-out;
+    opacity: 1;
+  }
+
+}
